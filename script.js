@@ -54,7 +54,7 @@ function showMessage() {
 
 // Search Task from local Storage if not found add new
 function search() {
-  if (input.value != "") {
+  if (input.value.trim() != "") {
     let filterItem = [];
     let btn = false;
     addBtn.disabled = false; // enable Btn
@@ -103,7 +103,7 @@ function displayListItem(taskList, btn) {
     box.classList.add("completeBtn");
 
     // task Content
-    const task = document.createElement("p");
+    const task = document.createElement("pre");
     task.classList.add("taskMessage");
     task.innerText = i.task;
 
@@ -143,7 +143,7 @@ function addTask() {
   if (input.value == "") {
     alert("Please Enter Any Task!");
   } else {
-    addTaskToLocal(input.value, 0);
+    addTaskToLocal(input.value.trim(), 0);
     storeData();
     input.value = "";
   }
@@ -198,7 +198,10 @@ function clickTask(event) {
       updateStatus(task[0].innerText, 0);
     }
   } else if (target.classList[0] == "deleteBtn") {
-    deleteTask(task[0].innerText);
+    listItem.classList.add("remove");
+    listItem.addEventListener("transitionend", () =>
+      deleteTask(task[0].innerText)
+    );
   }
   showMessage();
 }

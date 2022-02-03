@@ -80,6 +80,12 @@ Add task Section
   background-color: #6caae7;
 }
 
+.remove {
+  transition: 0.4s;
+  transform: translateX(40%);
+  opacity: 0;
+}
+
 /************************************
 Task List Section
 *************************************/
@@ -89,6 +95,15 @@ Task List Section
   background-color: #fff;
   border: 1.5px solid #88888882;
   border-radius: 5px;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .taskList .container h1 {
@@ -107,11 +122,14 @@ Task List Section
   border-bottom: 1.5px solid #88888882;
 }
 
+.listItem:last-child {
+  border-bottom: 0px;
+}
+
 .completeBtn {
-  margin: 5px;
   border: 2px solid red;
   transform: scale(1.4);
-  margin-right: 15px;
+  margin: auto 15px auto 0px;
 }
 
 .dashed {
@@ -163,6 +181,28 @@ Task List Section
   color: #444;
   padding: 20px;
   text-align: center;
+}
+
+/******************************************** 
+Footer Section  
+*******************************************/
+.footer {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+.footer p {
+  width: 100%;
+  background-color: #888;
+  color: #fff;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #00a8ff;
 }
 
 /************************************
